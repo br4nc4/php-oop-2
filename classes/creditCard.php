@@ -61,4 +61,11 @@ class CreditCard {
 
         return $this;
     }
+
+    public function checkExpiration() {
+        $expiration = DateTime::createFromFormat("m/y", $this->expireDate);
+        $presentTime = new DateTime("now");
+        
+        return $expiration > $presentTime;
+    }
 }

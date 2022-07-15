@@ -26,4 +26,4 @@ var_dump($customer);
 var_dump($customer->cart->getProducts());
 var_dump($customer->paymentManager->getPaymentMethods());
 
-$customer->checkout();
+$customer->checkout(0);

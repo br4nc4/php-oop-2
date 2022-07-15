@@ -66,7 +66,7 @@ class Customer {
         $this->setRegistered(true);
     }
 
-    public function checkout() {
+    public function checkout($paymentIndex) {
         $total = $this->cart->getTotal();
 
         var_dump("totale carello " .$total . "€"); //somma totale dei prezzi degli articoli presenti nel carrello
@@ -81,6 +81,16 @@ class Customer {
         $totalWithDiscount = $total - ($total * $discount /100);
 
         var_dump("totale scontato " . $totalWithDiscount . "€"); //somma totale dei prezzi con lo sconto del 20% se l'utente è registrato
+
+
+        $method = $this->paymentManager->getMethod($paymentIndex);
+
+        //Totale dopo il controllo sulla data di scadenza della carta di credito
+        if($method->checkExpiration()) {
+            echo "<strong>Pagamento riuscito</strong> <br> Totale: " . $totalWithDiscount . "€";
+        } else {
+            echo "<strong>Pagamento fallito</strong>";
+        }
     }
 }
 ?>

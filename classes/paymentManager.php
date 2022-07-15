@@ -11,4 +11,8 @@ class PaymentManager {
     {
         return $this->paymentMethods;
     }
+
+    public function getMethod($index){
+        return $this->getPaymentMethods()[$index];
+    }
 }
