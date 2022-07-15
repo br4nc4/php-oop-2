@@ -5,6 +5,13 @@ class Objects extends Product {
     private $material;
     private $color;
 
+    function __construct($_price, $_title, $_material, $_color)
+    {
+        parent::__construct($_price, $_title);
+        $this->setMaterial($_material);
+        $this->setColor($_color);
+    }
+
     public function getColor()
     {
         return $this->color;

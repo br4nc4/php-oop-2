@@ -5,9 +5,11 @@ class Food extends Product {
     private $expirationDate;
     private $ingredients;
 
-    function __construct()
+    function __construct($_price, $_title, $_expirationDate, $_ingredients)
     {
-        
+        parent::__construct($_price, $_title);
+        $this->setExpirationDate($_expirationDate);
+        $this->setIngredients($_ingredients);
     }
 
     public function getExpirationDate()
