@@ -89,7 +89,7 @@ class Customer {
         if($method->checkExpiration()) {
             echo "<strong>Pagamento riuscito</strong> <br> Totale: " . $totalWithDiscount . "€";
         } else {
-            echo "<strong>Pagamento fallito</strong>";
+            echo "<strong>Pagamento fallito</strong> <br> Carta scaduta il " .$method->getExpireDate();
         }
     }
 }
