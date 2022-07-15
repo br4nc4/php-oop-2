@@ -1,15 +1,13 @@
 <?php 
 class Customer {
-    private $registerd= false;
+    private $registered= false;
     private $firstName;
     private $lastName;
 
     function __construct($_firstName = null, $_lastName = null)
     {
         if(isset($_firstName) && isset($_lastName)){
-            $this->setFirstname($_firstName);
-            $this->setLastName($_lastName);
-            $this->setRegistered = true;
+            $this->register($_firstName, $_lastName);
         }
     }
 
@@ -39,6 +37,26 @@ class Customer {
         $this->lastName = $lastName;
 
         return $this;
+    }
+
+    public function getRegistered()
+    {
+        return $this->registerd;
+    }
+
+
+    private function setRegistered($registerd)
+    {
+        $this->registerd = $registerd;
+
+        return $this;
+    }
+
+    public function register ($_firstName, $_lastName) 
+    {
+        $this->setFirstName($_firstName);
+        $this->setLastName($_lastName);
+        $this->setRegistered(true);
     }
 }
 ?>
