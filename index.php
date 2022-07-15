@@ -5,8 +5,8 @@ require_once "classes/objects.php";
 require_once "classes/creditCard.php";
 
 $customer = new Customer();
-$creditCard1 = new CreditCard("visa", "74124598326597580", "445");
-$creditCard2 = new CreditCard("mastercard", "7700142368575536", "915");
+$creditCard1 = new CreditCard("visa", "74124598326597580", "445", "07/28");
+$creditCard2 = new CreditCard("mastercard", "7700142368575536", "915", "05/22");
 
 $customer->paymentManager->add($creditCard1);
 $customer->paymentManager->add($creditCard2);
@@ -25,3 +25,5 @@ $customer->cart->add($products[0], $products[2], $products[1]);
 var_dump($customer);
 var_dump($customer->cart->getProducts());
 var_dump($customer->paymentManager->getPaymentMethods());
+
+$customer->checkout();

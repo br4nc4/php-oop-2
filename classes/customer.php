@@ -65,5 +65,11 @@ class Customer {
         $this->setLastName($_lastName);
         $this->setRegistered(true);
     }
+
+    public function checkout() {
+        $total = $this->cart->getTotal();
+
+        var_dump("totale carello " .$total . "€");
+    }
 }
 ?>

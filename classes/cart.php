@@ -10,7 +10,11 @@ class Cart {
     }
 
     public function getTotal($discount = 0) {
-
+        $total = 0;
+        foreach($this->products as $product){
+            $total += $product->getPrice();
+        }
+        return $total;
     }
 
     public function getProducts()
