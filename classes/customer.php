@@ -1,6 +1,6 @@
 <?php 
 class Customer {
-    private $registered= false;
+    private $registered = false;
     private $firstName;
     private $lastName;
 
@@ -41,13 +41,13 @@ class Customer {
 
     public function getRegistered()
     {
-        return $this->registerd;
+        return $this->registered;
     }
 
 
-    private function setRegistered($registerd)
+    private function setRegistered($registered)
     {
-        $this->registerd = $registerd;
+        $this->registered = $registered;
 
         return $this;
     }
