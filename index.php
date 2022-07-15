@@ -13,4 +13,8 @@ $products = [
     new Objects(15.50, "tiragraffi", "legno", "legno"),
 ];
 
+$customer->cart->add($products[0]);
+$customer->cart->add($products[2]);
+
 var_dump($customer);
+var_dump($customer->cart->getProducts());
