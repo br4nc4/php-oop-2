@@ -1,14 +1,17 @@
 <?php 
 require_once __DIR__ ."/cart.php";
+require_once __DIR__ ."/paymentManager.php";
 class Customer {
     private $registered = false;
     private $firstName;
     private $lastName;
     public Cart $cart;
+    public PaymentManager $paymentManager;
 
     function __construct($_firstName = null, $_lastName = null)
     {
         $this->cart = new Cart();
+        $this->paymentManager = new PaymentManager();
 
         if(isset($_firstName) && isset($_lastName)){
             $this->register($_firstName, $_lastName);
