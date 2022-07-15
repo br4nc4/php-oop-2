@@ -69,7 +69,7 @@ class Customer {
     public function checkout() {
         $total = $this->cart->getTotal();
 
-        //var_dump("totale carello " .$total . "€"); //somma totale dei prezzi degli articoli presenti nel carrello
+        var_dump("totale carello " .$total . "€"); //somma totale dei prezzi degli articoli presenti nel carrello
 
         $discount = 0;
         if($this->registered) {
@@ -80,7 +80,7 @@ class Customer {
 
         $totalWithDiscount = $total - ($total * $discount /100);
 
-        var_dump("totale scontato " . $totalWithDiscount . "€");
+        var_dump("totale scontato " . $totalWithDiscount . "€"); //somma totale dei prezzi con lo sconto del 20% se l'utente è registrato
     }
 }
 ?>
