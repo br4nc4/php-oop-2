@@ -27,6 +27,9 @@ class Customer {
     
     public function setFirstName($firstName)
     {
+        if(!isset($firstName) || strlen(trim($firstName)) === 0){
+            throw new Exception("il nome inserito non è valido");
+        }
         $this->firstName = $firstName;
 
         return $this;
@@ -41,6 +44,9 @@ class Customer {
     
     public function setLastName($lastName)
     {
+        if(!isset($lastName) || strlen(trim($lastName)) === 0){
+            throw new Exception("il cognome inserito non è valido");
+        }
         $this->lastName = $lastName;
 
         return $this;
