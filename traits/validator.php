@@ -6,4 +6,9 @@ trait Validator{
             throw new Exception("il testo inserito non è valido");
         }
     }
+    private function validateCreditNumber($creditNum){
+        if(strlen($creditNum) > 16) {
+            throw new Exception("Il numero della carta di credito non è valido");
+        }
+    }
 }

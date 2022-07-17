@@ -5,7 +5,7 @@ require_once "classes/objects.php";
 require_once "classes/creditCard.php";
 
 $customer = new Customer();
-$creditCard1 = new CreditCard("visa", "74124598326597580", "445", "07/28");
+$creditCard1 = new CreditCard("visa", "7412459832659754", "445", "07/28");
 $creditCard2 = new CreditCard("mastercard", "7700142368575536", "915", "05/22");
 
 $customer->paymentManager->add($creditCard1);

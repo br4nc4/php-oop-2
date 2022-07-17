@@ -1,6 +1,9 @@
 <?php
+require_once __DIR__ ."/../traits/validator.php";
 
 class CreditCard {
+    use Validator;
+
     private $type;
     private $number;
     private $cvv;
@@ -33,6 +36,7 @@ class CreditCard {
 
     public function setNumber($number)
     {
+        $this->validateCreditNumber($number);
         $this->number = $number;
 
         return $this;
