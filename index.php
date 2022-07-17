@@ -10,7 +10,7 @@ $creditCard2 = new CreditCard("mastercard", "7700142368575536", "915", "05/22");
 
 $customer->paymentManager->add($creditCard1);
 $customer->paymentManager->add($creditCard2);
-$customer->register("Marco", "Rossi");
+$customer->register("Marco", "Brambilla");
 
 
 $products = [
